@@ -1,0 +1,12 @@
+version: '3'
+services:
+  steamcmd:
+    build: .
+    env_file: .env
+    volumes:
+      - steamcmd_login_volume:/home/steam/Steam
+      - steamcmd_volume:/home/steam/steamcmd
+
+volumes:
+  steamcmd_login_volume:
+  steamcmd_volume:
