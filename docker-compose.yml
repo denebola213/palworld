@@ -2,11 +2,16 @@ version: '3'
 services:
   steamcmd:
     build: .
+    restart: always
     env_file: .env
     volumes:
       - steamcmd_login_volume:/home/steam/Steam
       - steamcmd_volume:/home/steam/steamcmd
+      - palserver_volume:/home/steam/PalServer
+    ports:
+      - 8211:8211/udp
 
 volumes:
   steamcmd_login_volume:
   steamcmd_volume:
+  palserver_volume:
